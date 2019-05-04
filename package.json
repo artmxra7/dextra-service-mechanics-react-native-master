@@ -1,0 +1,60 @@
+{
+  "name": "DextraServiceMechanics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "run": "react-native run-android",
+    "buildDebug": "(cd android && ./gradlew clean && ./gradlew assembleDebug)",
+    "buildRelease": "(cd android && ./gradlew clean && ./gradlew assembleRelease)",
+    "sign": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore dextra-mechanics.keystore android/app/build/outputs/apk/app-release-unsigned.apk alias_name",
+    "zip": "~/Android/Sdk/build-tools/23.0.1/zipalign -v 4 android/app/build/outputs/apk/app-release-unsigned.apk android/app/build/outputs/apk/DextraMechanic.apk"
+  },
+  "dependencies": {
+    "axios": "0.16.1",
+    "lodash": "^4.17.4",
+    "mixin": "0.2.0",
+    "moment": "2.18.1",
+    "native-base": "2.1.1",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.45.1",
+    "react-native-analog-clock": "0.2.1",
+    "react-native-camera": "0.6.0",
+    "react-native-easy-grid": "0.1.8",
+    "react-native-elements": "0.10.3",
+    "react-native-fcm": "^9.1.0",
+    "react-native-htmlview": "0.9.0",
+    "react-native-image-picker": "0.26.3",
+    "react-native-maps": "0.15.3",
+    "react-native-modal": "2.3.2",
+    "react-native-modal-datetime-picker": "4.4.0",
+    "react-native-pdf-view": "0.3.2",
+    "react-native-storage": "0.1.5",
+    "react-native-vector-icons": "4.0.1",
+    "react-navigation": "1.0.0-beta.11",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "19.0.2",
+    "prettier": "^1.12.1",
+    "react-test-renderer": "16.0.0-alpha.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
